@@ -1,0 +1,39 @@
+
+<html>
+  <head>
+    <title>Custom Search JSON API Example</title>
+    <style type="text/css">
+   	body > div {
+    	border:1px solid #ccc;
+    	padding: 5px;
+    	margin: 5px;
+    }
+    .list{
+    	border:1px solid blue;
+    	padding: 5px;
+    	margin: 5px;
+    }
+    .Name{
+    	font-size:1.5em;
+    }
+    </style>
+  </head>
+  <body>
+	<div class='container'>
+		<form id='output'> </form>
+		<div id='output'> </div>
+	</div>
+    <script>
+function hndlr(data){
+	console.log(data)
+	document.body.innerHTML = Obj2Html(data);
+}
+var q = 'yahoo api';
+var key = 'AIzaSyBtW2C9NuDl4MiDE5UrWvJx_k2Aun932cU';
+var scr = document.createElement('script');
+scr.src = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx=017576662512468239146:omuauf_lfve&start=50&q='+q+'&callback=hndlr';
+document.head.appendChild(scr);
+
+    </script>
+  </body>
+</html>
